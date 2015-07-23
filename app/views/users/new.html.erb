@@ -1,0 +1,15 @@
+<div class="col-sm-4">	
+	<h2>Add new user</h2>
+
+	<%= form_for @user do |f| %>
+	<%= render 'layouts/errors', model: @user %>
+
+		<%= f.label :name %>
+		<%= f.text_field :name, class: "form-control" %>
+		<br />
+		<%= f.label :email %>
+		<%= f.text_field :email, class: "form-control" %>
+		<br />
+			<%= f.submit nil, class: "btn btn-primary" %>
+	<% end %>
+</div>

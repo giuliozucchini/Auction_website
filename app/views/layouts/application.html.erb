@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AuctionSite</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+	<body>
+
+
+			<nav class="navbar navbar-default">
+					<ul class="nav navbar-nav">
+					<li><%= link_to 'Users', users_path %></li>
+					<li><%= link_to 'New user', new_user_path %></li>
+					<li><%= link_to 'Products', products_path %></li>
+			<!-- 		<li><%= link_to 'U', users_path %></li>
+					<li><%= link_to 'Users', users_path %></li>
+			 -->	</ul>
+			 		<ul class="nav navbar-nav navbar-right">
+					<li><%= link_to 'Auction site', root_path %></li>
+					</ul>
+			</nav>
+
+		<div class="col-sm-12">	
+
+
+			<% flash.each do |key, value| %>
+					<%= content_tag :div, value, class: "flash-info" %>
+			<% end %>
+
+			<%= yield %>
+		</div>
+	</body>
+</html>
